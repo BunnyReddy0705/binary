@@ -1,0 +1,30 @@
+#include<stdio.h>
+int binarysearch(int arr[],int low,int high,int  target){
+while(low< high){
+int mid =(low+high)/2;
+if(arr[mid]==target){
+return mid;
+}
+if(arr[mid]<target){
+low=mid+1;
+}
+else{
+high = mid-1;
+}
+}
+return -1;
+}
+int main(){
+int arr[]={1,2,3,4,5};
+int size=sizeof(arr)/sizeof(arr[0]);
+int target = 5;
+int result = binarysearch(arr,0,size,target);
+if(result !=-1){
+printf("element %d found by index %d",target,result);
+}
+else
+{
+printf("element %d is not ound by element",target);
+}
+return 0;
+}
